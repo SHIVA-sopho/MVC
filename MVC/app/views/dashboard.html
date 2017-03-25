@@ -1,0 +1,71 @@
+<html>
+<head>
+<style type="text/css" href="dashboard.css"></style>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enable Hover State on Bootstrap 3 Table Rows</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+    .table-div{
+      margin: 20px;
+    }
+</style>
+</head>
+<body>
+    <div id="main">
+    <div class="container welcome">
+    <span> WELCOME TO LINK SAVER</span>	
+
+    </div>
+    <div class="container addlink">
+
+        <form method="POST" action="/dashboard" >
+ 	        <input type="text" name="link" id="linkid" required="required">
+            <br>
+            <input  type="submit" name="AddBtn" title="Add link" value="AddLink" id="AddBtnId"  >
+        </form>
+    </div>
+        
+      
+    <div class="container savedlinks">
+        
+           <a href="/dashboard" style="text-decoration: none; color: black;"> <button type="submit"  name="ShowLinks" id="showId"> SHOW SAVED LINKS</button>  </a>
+            
+    </div>    
+    <br>
+    <div class="container logout">
+        <a href="/logout" style="text-decoration: none; color: black;">
+       	    <button type="submit"  name="LogOut" >LOGOUT</button>
+        </a>
+    </div>    
+
+        <div class="table-div">
+            <table class="table table-hover">
+                
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>LINKS</th>    
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for link in links %}
+                    <tr>
+                    <td>#</td>
+                    <td><a href="www.google.com" style="color: black; text-decoration: none;">{{link.links}} </a> </td> 
+                </tr>
+                {% endfor %}
+       
+                </tbody>
+            </table>
+        </div>
+      
+	</div>
+</body>
+
+</html>
