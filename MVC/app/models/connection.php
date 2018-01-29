@@ -8,10 +8,10 @@ class Connection{
 
 public  function connect(){
 try{
-	 $server = "linksaver.dev";
- $database = "linksaver";
- $user = "root";
- $pass = "shiva123";
+	 $server = "";
+ $database = "";
+ $user = "";
+ $pass = "";
 	$conn = new \PDO("mysql:host=$server;dbname=$database", $user , $pass);
 	$conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 }
