@@ -1,2 +1,2 @@
-# MVC
-A simple Link saving APP
+# Link Saver.
+A simple Link saving APP made using MVC architecture
